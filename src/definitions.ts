@@ -1,3 +1,5 @@
 export interface SignalStrengthPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  getdBm(): Promise<any>;
+  getPercentage(): Promise<any>;
+  getLevel(): Promise<any>;
 }
