@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { SignalStrengthPlugin } from './definitions';
+import type { PermissionStatus, SignalStrengthPlugin } from './definitions';
 
 export class SignalStrengthWeb
   extends WebPlugin
@@ -13,6 +13,12 @@ export class SignalStrengthWeb
     throw new Error('Method not implemented.');
   }
   getLevel(): Promise<any> {
+    throw new Error('Method not implemented.');
+  }
+  checkPermissions(): Promise<PermissionStatus> {
+    throw new Error('Method not implemented.');
+  }
+  requestPermissions(): Promise<PermissionStatus> {
     throw new Error('Method not implemented.');
   }
 }

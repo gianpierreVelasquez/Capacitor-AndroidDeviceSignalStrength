@@ -76,6 +76,7 @@
     }
   },
   "dependencies": {
-    "@capacitor/cli": "^5.6.0"
+    "@capacitor/cli": "^5.6.0",
+    "@capacitor/network": "^5.0.6"
   }
 }
