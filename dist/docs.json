@@ -1,0 +1,196 @@
+{
+  "api": {
+    "name": "SignalStrengthPlugin",
+    "slug": "signalstrengthplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "getdBm",
+        "signature": "() => Promise<DBm>",
+        "parameters": [],
+        "returns": "Promise<DBm>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "DBm"
+        ],
+        "slug": "getdbm"
+      },
+      {
+        "name": "getPercentage",
+        "signature": "(options: { connection: ConnectionType; }) => Promise<Percentage>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ connection: ConnectionType; }"
+          }
+        ],
+        "returns": "Promise<Percentage>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Percentage",
+          "ConnectionType"
+        ],
+        "slug": "getpercentage"
+      },
+      {
+        "name": "getLevel",
+        "signature": "() => Promise<Level>",
+        "parameters": [],
+        "returns": "Promise<Level>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Level"
+        ],
+        "slug": "getlevel"
+      },
+      {
+        "name": "checkPermissions",
+        "signature": "() => Promise<PermissionStatus>",
+        "parameters": [],
+        "returns": "Promise<PermissionStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PermissionStatus"
+        ],
+        "slug": "checkpermissions"
+      },
+      {
+        "name": "requestPermissions",
+        "signature": "() => Promise<PermissionStatus>",
+        "parameters": [],
+        "returns": "Promise<PermissionStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PermissionStatus"
+        ],
+        "slug": "requestpermissions"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "DBm",
+      "slug": "dbm",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "dBm",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "Percentage",
+      "slug": "percentage",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "percentage",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Level",
+      "slug": "level",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "level",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "PermissionStatus",
+      "slug": "permissionstatus",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "info",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "PermissionState"
+          ],
+          "type": "PermissionState"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [
+    {
+      "name": "ConnectionType",
+      "slug": "connectiontype",
+      "docs": "The type of network connection that a device might have.",
+      "types": [
+        {
+          "text": "'wifi'",
+          "complexTypes": []
+        },
+        {
+          "text": "'cellular'",
+          "complexTypes": []
+        },
+        {
+          "text": "'none'",
+          "complexTypes": []
+        },
+        {
+          "text": "'unknown'",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "PermissionState",
+      "slug": "permissionstate",
+      "docs": "",
+      "types": [
+        {
+          "text": "'prompt'",
+          "complexTypes": []
+        },
+        {
+          "text": "'prompt-with-rationale'",
+          "complexTypes": []
+        },
+        {
+          "text": "'granted'",
+          "complexTypes": []
+        },
+        {
+          "text": "'denied'",
+          "complexTypes": []
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": []
+}
