@@ -1,133 +1,72 @@
-# capacitor-signal-strength
+# 📶 Capacitor Signal Strength (Android)
 
-Plugin use to get Android device signal strength
+A **Capacitor Android-only plugin** to retrieve **cellular signal strength information** such as:
 
-## Install
+- **dBm**
+- **Signal level**
+- **Percentage**
+- **5G / LTE / WCDMA / GSM awareness**
+
+Designed with **Capacitor 5 → 8 compatibility** and **correct Android permission handling**.
+
+---
+
+## ✨ Features
+
+- ✅ Android only (no web / iOS shims)
+- ✅ Supports **LTE, WCDMA, GSM, CDMA, 5G (NR)**
+- ✅ Returns:
+  - Signal strength in **dBm**
+  - Normalized **signal level**
+  - **Percentage**
+- ✅ Uses Capacitor’s **native permission system**
+- ✅ Compatible with **Capacitor 5, 6, 7, 8**
+- ✅ Safe permission lifecycle (no crashes after prompt)
+- ✅ Works with `@capacitor/network` for connection type
+
+---
+
+## ⚠️ Platform Support
+
+| Platform | Supported |
+|--------|-----------|
+| Android | ✅ Yes |
+| iOS | ❌ No |
+| Web | ❌ No |
+
+---
+
+## 📦 Installation
 
 ```bash
 npm install capacitor-signal-strength
-npx cap sync
+npx cap sync android
 ```
 
-## API
+# API Reference
 
-<docgen-index>
+## SignalStrengthPlugin
 
-* [`getdBm()`](#getdbm)
-* [`getPercentage(...)`](#getpercentage)
-* [`getLevel()`](#getlevel)
-* [`checkPermissions()`](#checkpermissions)
-* [`requestPermissions()`](#requestpermissions)
-* [Interfaces](#interfaces)
-* [Type Aliases](#type-aliases)
+### Methods
 
-</docgen-index>
+- `checkPermissions(): Promise<PermissionStatus>`
+- `requestPermissions(options): Promise<PermissionStatus>`
+- `getdBm(): Promise<{ dBm: number }>`
+- `getLevel(): Promise<{ level: number }>`
+- `getPercentage(connection: ConnectionType): Promise<{ percentage: number }>`
 
-<docgen-api>
-<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+---
 
-### getdBm()
+## PermissionStatus
 
-```typescript
-getdBm() => Promise<DBm>
+```ts
+{
+  phone: 'granted' | 'denied' | 'prompt'
+}
 ```
 
-**Returns:** <code>Promise&lt;<a href="#dbm">DBm</a>&gt;</code>
+### Compatibility
 
---------------------
-
-
-### getPercentage(...)
-
-```typescript
-getPercentage(options: { connection: ConnectionType; }) => Promise<Percentage>
-```
-
-| Param         | Type                                                                       |
-| ------------- | -------------------------------------------------------------------------- |
-| **`options`** | <code>{ connection: <a href="#connectiontype">ConnectionType</a>; }</code> |
-
-**Returns:** <code>Promise&lt;<a href="#percentage">Percentage</a>&gt;</code>
-
---------------------
-
-
-### getLevel()
-
-```typescript
-getLevel() => Promise<Level>
-```
-
-**Returns:** <code>Promise&lt;<a href="#level">Level</a>&gt;</code>
-
---------------------
-
-
-### checkPermissions()
-
-```typescript
-checkPermissions() => Promise<PermissionStatus>
-```
-
-**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
-
---------------------
-
-
-### requestPermissions()
-
-```typescript
-requestPermissions() => Promise<PermissionStatus>
-```
-
-**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
-
---------------------
-
-
-### Interfaces
-
-
-#### DBm
-
-| Prop      | Type                |
-| --------- | ------------------- |
-| **`dBm`** | <code>number</code> |
-
-
-#### Percentage
-
-| Prop             | Type                |
-| ---------------- | ------------------- |
-| **`percentage`** | <code>string</code> |
-
-
-#### Level
-
-| Prop        | Type                |
-| ----------- | ------------------- |
-| **`level`** | <code>number</code> |
-
-
-#### PermissionStatus
-
-| Prop       | Type                                                        |
-| ---------- | ----------------------------------------------------------- |
-| **`info`** | <code><a href="#permissionstate">PermissionState</a></code> |
-
-
-### Type Aliases
-
-
-#### ConnectionType
-
-The type of network connection that a device might have.
-
-<code>'wifi' | 'cellular' | 'none' | 'unknown'</code>
-
-
-#### PermissionState
-
-<code>'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'</code>
-
-</docgen-api>
+- Capacitor: v5+
+- Android: API 26 (Android 8.0) and above
+- 5G signal metrics are available on Android 11+
